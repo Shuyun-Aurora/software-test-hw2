@@ -1,0 +1,9 @@
+name: saucedemo-gui-test
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - selenium>=4.20.0
+      - pytest>=8.0.0

@@ -1,0 +1,17 @@
+\contentsline {section}{\numberline {1}文档说明}{2}{section.1}%
+\contentsline {section}{\numberline {2}测试目标}{2}{section.2}%
+\contentsline {section}{\numberline {3}被测对象}{2}{section.3}%
+\contentsline {section}{\numberline {4}测试范围}{3}{section.4}%
+\contentsline {section}{\numberline {5}测试环境与工具}{3}{section.5}%
+\contentsline {section}{\numberline {6}测试策略}{4}{section.6}%
+\contentsline {section}{\numberline {7}测试功能与事务设计}{4}{section.7}%
+\contentsline {section}{\numberline {8}Web 元素覆盖情况}{5}{section.8}%
+\contentsline {section}{\numberline {9}测试用例设计要点}{6}{section.9}%
+\contentsline {subsection}{\numberline {9.1}TC01 登录后进入商品浏览流程}{6}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}TC02 商品排序}{6}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}TC03 查看商品详情}{7}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}TC04 添加商品到购物车}{7}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}TC05 购物车页面检查}{7}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}TC06 结算与订单完成}{7}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}TC07 侧边栏导航菜单}{8}{subsection.9.7}%
+\contentsline {subsection}{\numberline {9.8}TC08 移动端 Web UI 轻量抽测}{8}{subsection.9.8}%
