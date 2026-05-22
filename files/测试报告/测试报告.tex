@@ -224,6 +224,93 @@ TC02 用于验证商品列表页排序下拉框的可用性。排序是商品浏
 \caption{TC02 商品排序执行结果截图}
 \end{figure}
 
+\subsection{TC03 查看商品详情}
+
+TC03 用于验证用户从商品列表页进入商品详情页的页面跳转和详情信息展示。该用例覆盖商品名称链接、商品详情页中的商品名称、描述、价格、图片、Add to cart 按钮以及 Back to products 返回入口。
+
+\begin{table}[H]
+\centering
+\caption{TC03 测试结果}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3cm}X}
+\toprule
+项目 & 内容 \\
+\midrule
+测试文件 & tests/test\_tc03\_product\_detail.py \\
+前置条件 & 已使用标准账号登录并进入商品列表页。 \\
+测试步骤 & 获取商品列表页中 Sauce Labs Backpack 的描述和价格；点击商品名称进入详情页；检查详情页 URL、商品名称、描述、价格、图片和 Add to cart 按钮；点击 Back to products 返回商品列表页。 \\
+实际检查点 & URL 包含 /inventory-item.html；详情页商品名称为 Sauce Labs Backpack；商品描述和价格与列表页一致；商品图片可见；Add to cart 按钮可见；返回后页面标题为 Products。 \\
+预期结果 & 能够正常进入商品详情页，详情页商品信息完整且与商品列表页一致，返回按钮可正常回到商品列表页。 \\
+执行结果 & 通过。 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+执行结果表明，商品详情页能够通过商品名称链接正常打开，商品标题、描述、价格和图片均显示正确，详情页返回商品列表页的操作也符合预期。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{Figures/TC03_result.png}
+\caption{TC03 查看商品详情执行结果截图}
+\end{figure}
+
+\subsection{TC04 添加商品到购物车}
+
+TC04 用于验证商品加入购物车后的页面状态变化。该用例分别从商品列表页和商品详情页执行 Add to cart 操作，检查按钮状态是否变为 Remove，并检查购物车 badge 数量是否随添加商品数量正确增加。
+
+\begin{table}[H]
+\centering
+\caption{TC04 测试结果}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3cm}X}
+\toprule
+项目 & 内容 \\
+\midrule
+测试文件 & tests/test\_tc04\_add\_to\_cart.py \\
+前置条件 & 已使用标准账号登录并进入商品列表页，购物车初始为空。 \\
+测试步骤 & 在商品列表页点击 Sauce Labs Backpack 的 Add to cart 按钮；检查按钮文本和购物车 badge；点击 Sauce Labs Bike Light 的商品名称链接进入商品详情页；在详情页点击 Add to cart；再次检查按钮文本和购物车 badge。 \\
+实际检查点 & 第一个商品加入购物车后按钮文本变为 Remove，购物车 badge 显示 1；通过商品名称链接进入第二个商品详情页后，点击 Add to cart，按钮文本变为 Remove，购物车 badge 显示 2。 \\
+预期结果 & 商品能够从列表页和详情页成功加入购物车，按钮状态和购物车数量标记能够正确反映购物车状态。 \\
+执行结果 & 通过。 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+执行结果表明，SauceDemo 的 Add to cart 按钮在列表页和详情页均可正常使用；商品加入购物车后按钮状态和购物车 badge 数量变化正确。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{Figures/TC04_result.png}
+\caption{TC04 添加商品到购物车执行结果截图}
+\end{figure}
+
+\subsection{TC05 购物车页面检查}
+
+TC05 用于验证已添加商品在购物车页面中的展示结果。该用例在商品加入购物车后进入购物车页，检查页面标题、商品名称、描述、价格、数量以及 Continue Shopping 和 Checkout 按钮。
+
+\begin{table}[H]
+\centering
+\caption{TC05 测试结果}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3cm}X}
+\toprule
+项目 & 内容 \\
+\midrule
+测试文件 & tests/test\_tc05\_cart\_page.py \\
+前置条件 & 已使用标准账号登录并进入商品列表页。 \\
+测试步骤 & 获取 Sauce Labs Backpack 在商品列表页中的描述和价格；点击该商品的 Add to cart；检查购物车 badge；点击购物车链接进入购物车页；检查购物车页面商品信息和操作按钮。 \\
+实际检查点 & 商品加入购物车后 badge 显示 1；购物车页标题为 Your Cart；购物车商品条目数为 1；商品名称为 Sauce Labs Backpack；该商品数量字段为 1；商品描述和价格与列表页一致；Continue Shopping 和 Checkout 按钮可见。 \\
+预期结果 & 购物车页面能够显示已添加商品，商品名称、描述、价格和数量正确，继续购物和结算入口正常显示。 \\
+执行结果 & 通过。 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+执行结果表明，购物车页面能够正确展示已添加商品，商品标题、描述、价格和数量与预期一致，Continue Shopping 和 Checkout 按钮均可被定位并正常显示。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{Figures/TC05_result.png}
+\caption{TC05 购物车页面检查执行结果截图}
+\end{figure}
+
 \section{移动端 Web UI 测试情况}
 
 （如果移动端 Web UI 测试执行成功，在本节补充移动端测试步骤、检查点和执行结果；如果采用 Chrome mobile emulation 或 Selenium 移动端窗口尺寸作为回退方案，需要说明该结果属于移动端视口模拟验证。）
@@ -231,6 +318,8 @@ TC02 用于验证商品列表页排序下拉框的可用性。排序是商品浏
 \section{问题与结论}
 
 TC01 和 TC02 均执行通过，验证了标准账号进入商品列表页、商品列表页关键元素显示以及商品排序下拉框的四种排序规则。测试结果表明，SauceDemo 的商品浏览入口和商品排序功能表现正常，未发现影响登录后商品浏览和排序操作的功能异常。
+
+TC03、TC04 和 TC05 均执行通过，验证了商品详情页跳转、商品详情信息展示、添加商品到购物车以及购物车页面商品信息展示等流程。测试结果表明，SauceDemo 的商品详情页能够正确显示商品标题、描述、价格和图片；商品加入购物车后按钮状态与购物车 badge 数量能够正确更新；购物车页面能够正确显示已添加商品的名称、描述、价格、数量以及继续购物和结算入口。成员 B 负责范围内未发现影响商品详情查看和购物车使用的功能异常。
 
 \section{小组成员贡献与比例}
 

@@ -6,6 +6,9 @@
 \contentsline {section}{\numberline {6}测试用例与执行结果}{5}{section.6}%
 \contentsline {subsection}{\numberline {6.1}TC01 登录后进入商品浏览流程}{5}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}TC02 商品排序}{6}{subsection.6.2}%
-\contentsline {section}{\numberline {7}移动端 Web UI 测试情况}{7}{section.7}%
-\contentsline {section}{\numberline {8}问题与结论}{7}{section.8}%
-\contentsline {section}{\numberline {9}小组成员贡献与比例}{7}{section.9}%
+\contentsline {subsection}{\numberline {6.3}TC03 查看商品详情}{7}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}TC04 添加商品到购物车}{8}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}TC05 购物车页面检查}{9}{subsection.6.5}%
+\contentsline {section}{\numberline {7}移动端 Web UI 测试情况}{10}{section.7}%
+\contentsline {section}{\numberline {8}问题与结论}{10}{section.8}%
+\contentsline {section}{\numberline {9}小组成员贡献与比例}{11}{section.9}%
