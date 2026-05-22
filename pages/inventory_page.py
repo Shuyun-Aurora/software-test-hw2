@@ -32,12 +32,23 @@ class InventoryPage:
         self.wait_until_loaded()
         return [element.text for element in self.driver.find_elements(*self.INVENTORY_NAMES)]
 
+    def item_count(self) -> int:
+        self.wait_until_loaded()
+        return len(self.driver.find_elements(*self.INVENTORY_ITEMS))
+
     def item_prices(self) -> list[Decimal]:
         self.wait_until_loaded()
         prices = []
         for element in self.driver.find_elements(*self.INVENTORY_PRICES):
             prices.append(Decimal(element.text.replace("$", "")))
         return prices
+
+    def sort_select_is_visible(self) -> bool:
+        return self.wait.until(EC.visibility_of_element_located(self.SORT_SELECT)).is_displayed()
+
+    def sort_options(self) -> list[str]:
+        select_element = self.wait.until(EC.visibility_of_element_located(self.SORT_SELECT))
+        return [option.text for option in Select(select_element).options]
 
     def cart_is_visible(self) -> bool:
         return self.wait.until(EC.visibility_of_element_located(self.CART_LINK)).is_displayed()

@@ -24,6 +24,18 @@ class LoginPage:
         self.driver.get(self.base_url)
         self.wait.until(EC.visibility_of_element_located(self.LOGIN_FORM))
 
+    def login_form_is_visible(self) -> bool:
+        return self.wait.until(EC.visibility_of_element_located(self.LOGIN_FORM)).is_displayed()
+
+    def username_input_is_visible(self) -> bool:
+        return self.wait.until(EC.visibility_of_element_located(self.USERNAME_INPUT)).is_displayed()
+
+    def password_input_is_visible(self) -> bool:
+        return self.wait.until(EC.visibility_of_element_located(self.PASSWORD_INPUT)).is_displayed()
+
+    def login_button_is_clickable(self) -> bool:
+        return self.wait.until(EC.element_to_be_clickable(self.LOGIN_BUTTON)).is_enabled()
+
     def login(self, username: str, password: str) -> None:
         self.wait.until(EC.visibility_of_element_located(self.USERNAME_INPUT)).clear()
         self.driver.find_element(*self.USERNAME_INPUT).send_keys(username)

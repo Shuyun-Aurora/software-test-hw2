@@ -1,0 +1,251 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{float}
+
+\geometry{left=2.6cm,right=2.6cm,top=2.5cm,bottom=2.5cm}
+\setlength{\headheight}{15pt}
+\setlist{nosep,leftmargin=2em}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue
+}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{软件测试作业二：GUI 测试}
+\rhead{测试报告}
+\cfoot{\thepage}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  columns=fullflexible,
+  backgroundcolor=\color{gray!8}
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries 测试报告}
+\end{center}
+\thispagestyle{empty}
+\vspace{1em}
+\tableofcontents
+\newpage
+
+\section{测试概述}
+
+本次 GUI 自动化测试以 SauceDemo 电商网站为被测对象，围绕电商网站中常见的商品浏览、排序、详情查看、购物车、结算和移动端补充验证等事务开展测试。SauceDemo 页面结构清晰，业务流程完整，且包含按钮、输入框、表单、下拉框、链接、侧边栏、购物车标记等多种 Web 元素，适合作为课程作业中的 GUI 自动化测试对象。
+
+测试采用 Selenium WebDriver 模拟用户在浏览器中的真实操作，并使用 pytest 组织测试用例和执行结果。报告围绕测试计划中确定的功能事务展开，记录测试设计、Web 元素覆盖、用例执行结果和测试结论。
+
+（如果移动端 Web UI 测试执行成功，需要在本节补充移动端测试对象说明，例如 Android Chrome 或移动端视口下的 SauceDemo Web 页面。）
+
+被测网站：
+
+\begin{lstlisting}
+https://www.saucedemo.com/
+\end{lstlisting}
+
+测试账号：
+
+\begin{lstlisting}
+username: standard_user
+password: secret_sauce
+\end{lstlisting}
+
+\section{测试范围}
+
+本次测试覆盖 SauceDemo 的核心购物路径：
+
+\begin{lstlisting}
+登录页 -> 商品列表页 -> 商品详情页 -> 购物车页 -> 结算页 -> 订单完成页
+\end{lstlisting}
+
+整体测试事务包括登录后进入商品浏览流程、商品排序、查看商品详情、添加商品到购物车、购物车页面检查、结算与订单完成、侧边栏导航菜单和移动端 Web UI 轻量抽测。其中，桌面端 Web 测试用于验证主要业务流程，移动端 Web UI 测试作为补充抽测，用于检查移动端浏览器环境下的关键触控和页面滚动操作。
+
+（如果移动端 Web UI 测试执行成功，需要在本节补充移动端测试范围，例如登录页显示、商品列表滑动、触控点击 Add to cart 和购物车 badge 状态变化；如果采用回退方案，需要说明该范围属于移动端视口模拟验证。）
+
+\section{测试环境与工具}
+
+测试环境使用独立 conda 环境管理 Python 依赖，避免与本机其他课程项目或 Python 包版本产生冲突。测试代码采用 Page Object 思路封装页面元素和页面行为，将页面定位、页面操作和测试断言分离，使测试代码结构更清晰，也便于定位失败原因。
+
+（如果移动端 Web UI 测试执行成功，需要在本节补充 Appium、Android 模拟器或真实 Android 设备、Android Chrome 等环境与工具；如果采用回退方案，需要补充 Chrome mobile emulation 或 Selenium 移动端窗口尺寸设置。）
+
+\begin{table}[H]
+\centering
+\caption{测试环境与工具}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3.2cm}X}
+\toprule
+项目 & 内容 \\
+\midrule
+操作系统 & Windows \\
+浏览器 & Google Chrome \\
+编程语言 & Python 3.11 \\
+Python 环境 & conda 环境：saucedemo-gui-test \\
+自动化框架 & Selenium WebDriver \\
+测试运行框架 & pytest \\
+测试组织方式 & Page Object + pytest fixture \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{测试功能或事务设计}
+
+测试功能设计以完整用户事务为单位，而不是单独罗列页面元素。登录操作不作为孤立功能统计，而是作为进入商品浏览流程的必要前置步骤；商品排序、商品详情、购物车、结算、导航和移动端抽测分别对应 SauceDemo 中不同层级的页面与交互。这样的设计既符合购物流程的真实使用顺序，也能够满足作业对 5 个及以上功能或事务、多页面跳转和多类 Web 元素覆盖的要求。
+
+\begin{longtable}{p{1.5cm}p{4.5cm}p{8cm}}
+\caption{测试功能或事务设计}\\
+\toprule
+编号 & 功能或事务 & 测试目标 \\
+\midrule
+\endfirsthead
+\toprule
+编号 & 功能或事务 & 测试目标 \\
+\midrule
+\endhead
+TC01 & 登录后进入商品浏览流程 & 验证登录表单可用，使用标准账号登录后能够进入商品列表页，并检查商品页关键元素是否正常显示。 \\
+TC02 & 商品排序 & 验证商品排序下拉框可见，排序选项完整，并检查名称升序、名称降序、价格升序、价格降序四种排序结果。 \\
+TC03 & 查看商品详情 & 验证从商品列表页点击商品名称或图片后能够进入商品详情页，并检查商品名称、描述、价格、图片和返回入口。 \\
+TC04 & 添加商品到购物车 & 验证商品能够从列表页或详情页加入购物车，并检查按钮状态和购物车 badge 数量变化。 \\
+TC05 & 购物车页面检查 & 验证点击购物车入口后能够进入购物车页，并检查购物车中商品名称、价格、数量和结算入口。 \\
+TC06 & 结算与订单完成 & 验证购物车商品能够进入结算流程，填写结算信息后完成订单，并检查订单完成提示。 \\
+TC07 & 侧边栏导航菜单 & 验证商品列表页侧边栏菜单能够正常展开、显示导航项并关闭。 \\
+TC08 & 移动端 Web UI 轻量抽测 & 验证移动端浏览器或移动端视口下登录、商品列表滑动和加入购物车等关键交互是否可用。 \\
+\bottomrule
+\end{longtable}
+
+\section{Web 元素覆盖情况}
+
+根据作业要求，本次测试需要覆盖按钮、输入框、表单、下拉框、链接等必选 Web 元素，并至少覆盖一种可选元素。整体测试设计围绕 SauceDemo 的购物流程展开：商品列表页覆盖排序下拉框、商品详情入口和购物车入口；商品详情、购物车和结算流程覆盖商品链接、购物车 badge、结算表单和多个操作按钮；侧边栏导航和移动端抽测覆盖导航栏、触控点击和页面滑动等可选元素。登录页中的账号密码输入框、登录表单和 Login 按钮作为进入购物流程的必要入口进行基础检查，但不作为独立业务功能统计。
+
+从整体覆盖角度看，测试对象能够满足多页面、多元素、多操作类型的 GUI 测试要求，元素覆盖与测试事务之间具有明确对应关系。
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{p{2.4cm}p{8.6cm}@{\hspace{0.4cm}}p{3.6cm}}
+\caption{Web 元素覆盖情况}\\
+\toprule
+元素类型 & SauceDemo 中的对应元素 & 对应用例 \\
+\midrule
+\endfirsthead
+\toprule
+元素类型 & SauceDemo 中的对应元素 & 对应用例 \\
+\midrule
+\endhead
+按钮 & 登录按钮（Login）、加入购物车按钮（Add to cart）、移除按钮（Remove）、结算按钮（Checkout）、继续按钮（Continue）、完成按钮（Finish）、侧边栏关闭按钮 & TC01、TC04、TC05、TC06、TC07 \\
+输入框 & 用户名输入框（username）、密码输入框（password）、姓名输入框（first name、last name）、邮政编码输入框（postal code） & TC01、TC06 \\
+表单 & 登录表单、结算信息表单 & TC01、TC06 \\
+下拉框 & 商品排序下拉框 & TC02 \\
+链接 & 商品名称链接、商品图片链接、购物车链接、侧边栏菜单项 & TC03、TC05、TC07 \\
+侧边栏/导航栏 & 左侧菜单按钮、全部商品（All Items）、关于页面（About）、退出登录（Logout）、重置应用状态（Reset App State） & TC07 \\
+购物车数量标记 & 购物车图标旁显示的商品数量标记（badge） & TC04、TC05 \\
+移动端触控/滑动 & Android Chrome 中的触控点击、页面滚动与元素定位 & TC08 \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\section{测试用例与执行结果}
+
+测试用例按照“操作步骤可复现、检查点明确、结果可断言”的原则编写。自动化测试使用 Selenium 模拟真实浏览器操作，并通过 pytest 对页面跳转、元素显示状态、业务数据和交互结果进行断言。测试失败时会自动在 artifacts/screenshots 目录下保存截图，便于定位问题。
+
+用例执行前需确认 conda 环境、Python 依赖和 Chrome 浏览器可用。执行过程中浏览器由测试 fixture 自动启动，测试结束后自动关闭浏览器实例。各测试事务的具体步骤、检查点和执行结果在以下小节中分别记录。
+
+\subsection{TC01 登录后进入商品浏览流程}
+
+TC01 用于验证用户能否通过标准账号进入商品浏览页面。该用例覆盖登录页表单填写、按钮点击、页面跳转和商品列表页加载结果，是整个购物流程自动化测试的入口用例。
+
+\begin{table}[H]
+\centering
+\caption{TC01 测试结果}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3cm}X}
+\toprule
+项目 & 内容 \\
+\midrule
+测试文件 & tests/test\_tc01\_login\_inventory.py \\
+前置条件 & Chrome 浏览器可启动，网络可访问 SauceDemo，使用账号 standard\_user / secret\_sauce。 \\
+测试步骤 & 打开登录页；检查登录表单、用户名输入框、密码输入框和 Login 按钮；输入账号密码并点击 Login；等待商品列表页加载。 \\
+实际检查点 & URL 包含 /inventory.html；页面标题为 Products；商品数量为 6；商品名称数量为 6；排序下拉框可见；购物车入口可见。 \\
+预期结果 & 登录成功并进入商品列表页，商品列表页关键元素正常显示。 \\
+执行结果 & 通过。 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+执行结果表明，标准账号能够正常登录，登录后页面能够稳定跳转至商品列表页；商品列表页中的标题、商品条目、排序下拉框和购物车入口均能被 Selenium 定位并通过断言检查。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{Figures/TC01_result.png}
+\caption{TC01 登录后进入商品浏览流程执行结果截图}
+\end{figure}
+
+\subsection{TC02 商品排序}
+
+TC02 用于验证商品列表页排序下拉框的可用性。排序是商品浏览场景中的常见交互，本用例通过检查下拉框选项和排序后的商品顺序，确认该控件既能够被操作，也能够产生正确的页面结果。
+
+\begin{table}[H]
+\centering
+\caption{TC02 测试结果}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3cm}X}
+\toprule
+项目 & 内容 \\
+\midrule
+测试文件 & tests/test\_tc02\_product\_sorting.py \\
+前置条件 & 已使用标准账号登录并进入商品列表页。 \\
+测试步骤 & 检查排序下拉框可见；检查下拉框选项；依次选择 Name (Z to A)、Name (A to Z)、Price (low to high)、Price (high to low)。 \\
+实际检查点 & 下拉框选项包含 4 项；商品名称降序结果正确；商品名称升序结果正确；价格升序结果正确；价格降序结果正确。 \\
+预期结果 & 商品列表能够按照所选排序规则正确排列。 \\
+执行结果 & 通过。 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+执行结果表明，商品排序下拉框包含 4 个预期选项；选择不同排序规则后，商品名称和价格列表均能按照对应规则排列，说明排序控件和页面结果更新均符合预期。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{Figures/TC02_result.png}
+\caption{TC02 商品排序执行结果截图}
+\end{figure}
+
+\section{移动端 Web UI 测试情况}
+
+（如果移动端 Web UI 测试执行成功，在本节补充移动端测试步骤、检查点和执行结果；如果采用 Chrome mobile emulation 或 Selenium 移动端窗口尺寸作为回退方案，需要说明该结果属于移动端视口模拟验证。）
+
+\section{问题与结论}
+
+TC01 和 TC02 均执行通过，验证了标准账号进入商品列表页、商品列表页关键元素显示以及商品排序下拉框的四种排序规则。测试结果表明，SauceDemo 的商品浏览入口和商品排序功能表现正常，未发现影响登录后商品浏览和排序操作的功能异常。
+
+\section{小组成员贡献与比例}
+
+\begin{table}[H]
+\centering
+\caption{小组成员贡献与比例}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.4cm}Y>{\raggedright\arraybackslash}p{2.2cm}}
+\toprule
+成员 & 主要贡献 & 贡献比例 \\
+\midrule
+成员 A & 测试计划编写；登录后商品浏览流程与商品排序相关测试；测试报告对应部分整理。 & 33.3\% \\
+成员 B & 商品详情、添加商品到购物车、购物车页面检查相关测试与报告内容。 & 33.3\% \\
+成员 C & 结算与订单完成、侧边栏导航菜单、移动端 Web UI 轻量抽测相关测试与报告内容。 & 33.3\% \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\end{document}

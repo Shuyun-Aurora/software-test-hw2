@@ -9,9 +9,9 @@
 \contentsline {section}{\numberline {9}测试用例设计要点}{6}{section.9}%
 \contentsline {subsection}{\numberline {9.1}TC01 登录后进入商品浏览流程}{6}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}TC02 商品排序}{6}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}TC03 查看商品详情}{7}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.3}TC03 查看商品详情}{6}{subsection.9.3}%
 \contentsline {subsection}{\numberline {9.4}TC04 添加商品到购物车}{7}{subsection.9.4}%
 \contentsline {subsection}{\numberline {9.5}TC05 购物车页面检查}{7}{subsection.9.5}%
 \contentsline {subsection}{\numberline {9.6}TC06 结算与订单完成}{7}{subsection.9.6}%
-\contentsline {subsection}{\numberline {9.7}TC07 侧边栏导航菜单}{8}{subsection.9.7}%
+\contentsline {subsection}{\numberline {9.7}TC07 侧边栏导航菜单}{7}{subsection.9.7}%
 \contentsline {subsection}{\numberline {9.8}TC08 移动端 Web UI 轻量抽测}{8}{subsection.9.8}%

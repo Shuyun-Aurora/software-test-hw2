@@ -46,7 +46,7 @@
 
 \section{文档说明}
 
-本文档为软件测试课程作业二《GUI 测试》的测试计划，用于指导 SauceDemo 电商网站的 Selenium 自动化测试设计、脚本编写、测试执行和后续测试报告整理。测试计划由成员 A 负责编写，后续测试代码和测试报告由小组成员按分工共同完成。
+本文档为软件测试课程作业二《GUI 测试》的测试计划，用于指导 SauceDemo 电商网站的 Selenium 自动化测试设计、脚本编写、测试执行和后续测试报告整理。
 
 \section{测试目标}
 
@@ -124,7 +124,7 @@ password: secret_sauce
 \begin{table}[htbp]
 \centering
 \caption{测试环境与工具}
-\begin{tabularx}{\textwidth}{>{\bfseries}p{3.2cm}X}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3.6cm}X}
 \toprule
 项目 & 内容 \\
 \midrule
@@ -206,7 +206,7 @@ TC08 & 移动端 Web UI 轻量抽测 & Android Chrome 中登录后商品列表�
 \begingroup
 \small
 \setlength{\tabcolsep}{2pt}
-\begin{longtable}{p{2.0cm}p{1.4cm}p{6.0cm}p{3.8cm}}
+\begin{longtable}{p{1.8cm}p{1.8cm}p{6.8cm}@{\hspace{0.4cm}}p{3.4cm}}
 \caption{Web 元素覆盖情况}\\
 \toprule
 元素类型 & 作业要求 & SauceDemo 中的对应元素 & 对应用例 \\
@@ -216,13 +216,13 @@ TC08 & 移动端 Web UI 轻量抽测 & Android Chrome 中登录后商品列表�
 元素类型 & 作业要求 & SauceDemo 中的对应元素 & 对应用例 \\
 \midrule
 \endhead
-按钮 & 必选 & Login、Add to cart、Remove、Checkout、Continue、Finish、侧边栏关闭按钮 & TC01、TC04、TC05、TC06、TC07 \\
-输入框 & 必选 & username、password、first name、last name、postal code & TC01、TC06 \\
+按钮 & 必选 & 登录按钮（Login）、加入购物车按钮（Add to cart）、移除按钮（Remove）、结算按钮（Checkout）、继续按钮（Continue）、完成按钮（Finish）、侧边栏关闭按钮 & TC01、TC04、TC05、TC06、TC07 \\
+输入框 & 必选 & 用户名输入框（username）、密码输入框（password）、姓名输入框（first name、last name）、邮政编码输入框（postal code） & TC01、TC06 \\
 表单 & 必选 & 登录表单、结算信息表单 & TC01、TC06 \\
-下拉框 & 必选 & 商品排序下拉框 product\_sort\_container & TC02 \\
+下拉框 & 必选 & 商品排序下拉框 & TC02 \\
 链接 & 必选 & 商品名称链接、商品图片链接、购物车链接、侧边栏菜单项 & TC03、TC05、TC07 \\
-侧边栏/导航栏 & 可选 & 左侧菜单按钮、All Items、About、Logout、Reset App State & TC07 \\
-购物车 badge & 可选 & 购物车数量标记 & TC04、TC05 \\
+侧边栏/导航栏 & 可选 & 左侧菜单按钮、全部商品（All Items）、关于页面（About）、退出登录（Logout）、重置应用状态（Reset App State） & TC07 \\
+购物车数量标记 & 可选 & 购物车图标旁显示的商品数量标记（badge） & TC04、TC05 \\
 移动端触控/滑动 & 可选 & Android Chrome 中的触控点击、页面滚动与元素定位 & TC08 \\
 \bottomrule
 \end{longtable}

@@ -30,16 +30,6 @@ python -m pytest tests/test_tc01_login_inventory.py tests/test_tc02_product_sort
 当前包含：
 
 - TC01：登录后进入商品浏览流程
-- TC02：商品排序，包含名称降序和价格升序
+- TC02：商品排序，包含名称升序、名称降序、价格升序和价格降序
 
 测试失败时会在 `artifacts/screenshots/` 下保存截图。
-
-## 说明
-
-正常本机运行推荐使用有界面模式，便于观察浏览器操作过程。无界面模式可选：
-
-```powershell
-python -m pytest tests/test_tc01_login_inventory.py tests/test_tc02_product_sorting.py --headless
-```
-
-开发过程中曾在沙箱环境下遇到无界面 Chrome DevTools 断连问题，加入稳定参数后已可运行。该问题更可能与沙箱/CI 环境有关，本机有界面模式通过即可认为当前用例可执行。
