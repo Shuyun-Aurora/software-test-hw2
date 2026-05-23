@@ -1,19 +1,19 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.4.20)  22 MAY 2026 10:43
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.13)  23 MAY 2026 19:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./测试计划.tex
-(测试计划.tex
+**测试计划.tex
+(./测试计划.tex
 LaTeX2e <2025-11-01>
-L3 programming layer <2025-12-24>
-(D:\MiKTeX\tex/latex/ctex\ctexart.cls
-(D:\MiKTeX\tex/latex/ctex/config\ctexbackend.cfg
+L3 programming layer <2026-01-19>
+(e:/Install/texlive/2025/texmf-dist/tex/latex/ctex/ctexart.cls
+(e:/Install/texlive/2025/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg
 File: ctexbackend.cfg 2022/07/14 v2.5.10 Backend configuration file (CTEX)
 )
-(D:\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2025-12-24 L3 programming layer (loader) 
+(e:/Install/texlive/2025/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2026-01-19 L3 programming layer (loader) 
 
-(D:\MiKTeX\tex/latex/l3backend\l3backend-xetex.def
+(e:/Install/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2025-10-09 L3 backend support: XeTeX
 \g__graphics_track_int=\count271
 \g__pdfannot_backend_int=\count272
@@ -21,13 +21,16 @@ File: l3backend-xetex.def 2025-10-09 L3 backend support: XeTeX
 ))
 Document Class: ctexart 2022/07/14 v2.5.10 Chinese adapter for class article (C
 TEX)
-(D:\MiKTeX\tex/latex/ctex\ctexhook.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/ctex/ctexhook.sty
 Package: ctexhook 2022/07/14 v2.5.10 Document and package hooks (CTEX)
-) (D:\MiKTeX\tex/latex/ctex\ctexpatch.sty
+)
+(e:/Install/texlive/2025/texmf-dist/tex/latex/ctex/ctexpatch.sty
 Package: ctexpatch 2022/07/14 v2.5.10 Patching commands (CTEX)
-) (D:\MiKTeX\tex/latex/base\fix-cm.sty
+)
+(e:/Install/texlive/2025/texmf-dist/tex/latex/base/fix-cm.sty
 Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
- (D:\MiKTeX\tex/latex/base\ts1enc.def
+
+(e:/Install/texlive/2025/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 LaTeX Encoding Info:    Redeclaring text command \capitalcedilla (encoding TS1)
@@ -291,12 +294,12 @@ t line 194.
 \g__ctex_section_depth_int=\count275
 \g__ctex_font_size_int=\count276
 
-(D:\MiKTeX\tex/latex/ctex/config\ctexopts.cfg
+(e:/Install/texlive/2025/texmf-dist/tex/latex/ctex/config/ctexopts.cfg
 File: ctexopts.cfg 2022/07/14 v2.5.10 Option configuration file (CTEX)
 )
-(D:\MiKTeX\tex/latex/base\article.cls
+(e:/Install/texlive/2025/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
-(D:\MiKTeX\tex/latex/base\size12.clo
+(e:/Install/texlive/2025/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count277
@@ -311,13 +314,13 @@ File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip50
 \bibindent=\dimen149
 )
-(D:\MiKTeX\tex/latex/ctex/engine\ctex-engine-xetex.def
+(e:/Install/texlive/2025/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def
 File: ctex-engine-xetex.def 2022/07/14 v2.5.10 XeLaTeX adapter (CTEX)
-
-(D:\MiKTeX\tex/xelatex/xecjk\xeCJK.sty
+(e:/Install/texlive/2025/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
 Package: xeCJK 2022/08/05 v3.9.1 Typesetting CJK scripts with XeLaTeX
 
-(D:\MiKTeX\tex/latex/l3packages/xtemplate\xtemplate.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.st
+y
 Package: xtemplate 2025-10-09 L3 Experimental prototype document functions
 )
 \l__xeCJK_tmp_int=\count285
@@ -380,14 +383,13 @@ LaTeX template Info: Declaring template type 'xeCJK/punctuation' taking 0
 \g__xeCJK_fam_allocation_int=\count295
 \l__xeCJK_verb_case_int=\count296
 \l__xeCJK_verb_exspace_skip=\skip57
-
-(D:\MiKTeX\tex/latex/fontspec\fontspec.sty
-(D:\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
+ (e:/Install/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2025-10-09 L3 Experimental document command parser
 )
 Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
 
-(D:\MiKTeX\tex/latex/fontspec\fontspec-xetex.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTe
 X
 \l__fontspec_script_int=\count297
@@ -405,11 +407,11 @@ X
 \l__fontspec_tmpb_dim=\dimen178
 \l__fontspec_tmpc_dim=\dimen179
 
-(D:\MiKTeX\tex/latex/base\fontenc.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 )
-(D:\MiKTeX\tex/latex/fontspec\fontspec.cfg)))
-(D:\MiKTeX\tex/xelatex/xecjk\xeCJK.cfg
+(e:/Install/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(e:/Install/texlive/2025/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg
 File: xeCJK.cfg 2022/08/05 v3.9.1 Configuration file for xeCJK package
 ))
 \ccwd=\dimen180
@@ -417,24 +419,26 @@ File: xeCJK.cfg 2022/08/05 v3.9.1 Configuration file for xeCJK package
 )
 \l__ctex_ziju_dim=\dimen181
 
-(D:\MiKTeX\tex/latex/zhnumber\zhnumber.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/zhnumber/zhnumber.sty
 Package: zhnumber 2022/07/14 v3.0 Typesetting numbers with Chinese glyphs
 \l__zhnum_scale_int=\count308
 \l__zhnum_tmp_int=\count309
 
-(D:\MiKTeX\tex/latex/zhnumber\zhnumber-utf8.cfg
+(e:/Install/texlive/2025/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg
 File: zhnumber-utf8.cfg 2022/07/14 v3.0 Chinese numerals with UTF8 encoding
 ))
 \l__ctex_heading_skip=\skip59
 
-(D:\MiKTeX\tex/latex/ctex/scheme\ctex-scheme-chinese-article.def
+(e:/Install/texlive/2025/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-a
+rticle.def
 File: ctex-scheme-chinese-article.def 2022/07/14 v2.5.10 Chinese scheme for art
 icle (CTEX)
 
-(D:\MiKTeX\tex/latex/ctex/config\ctex-name-utf8.cfg
+(e:/Install/texlive/2025/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg
 File: ctex-name-utf8.cfg 2022/07/14 v2.5.10 Caption with encoding UTF-8 (CTEX)
 ))
-(D:\MiKTeX\tex/latex/ctex/fontset\ctex-fontset-windows.def
+(e:/Install/texlive/2025/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-windows
+.def
 File: ctex-fontset-windows.def 2022/07/14 v2.5.10 Windows fonts definition (CTE
 X)
 
@@ -468,20 +472,20 @@ Package fontspec Info:
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
 (fontspec)             <->"KaiTi/OT:script=hani;language=dflt;"
 
-))
-(D:\MiKTeX\tex/latex/ctex/config\ctex.cfg
+)) (e:/Install/texlive/2025/texmf-dist/tex/latex/ctex/config/ctex.cfg
 File: ctex.cfg 2022/07/14 v2.5.10 Configuration file (CTEX)
 )
-(D:\MiKTeX\tex/latex/geometry\geometry.sty
-Package: geometry 2026/03/07 v6.0 Page Geometry
+(e:/Install/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(D:\MiKTeX\tex/latex/graphics\keyval.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-(D:\MiKTeX\tex/generic/iftex\ifvtex.sty
+(e:/Install/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (D:\MiKTeX\tex/generic/iftex\iftex.sty
+
+(e:/Install/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
 \Gm@cnth=\count310
@@ -496,8 +500,8 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layouthoffset=\dimen188
 \Gm@layoutvoffset=\dimen189
 \Gm@dimlist=\toks18
- (D:\MiKTeX\tex/latex/geometry\geometry.cfg))
-(D:\MiKTeX\tex/latex/tools\array.sty
+)
+(e:/Install/texlive/2025/texmf-dist/tex/latex/tools/array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen190
 \ar@mcellbox=\box56
@@ -506,7 +510,8 @@ Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \extratabsurround=\skip60
 \backup@length=\skip61
 \ar@cellbox=\box57
-) (D:\MiKTeX\tex/latex/tools\tabularx.sty
+)
+(e:/Install/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@col@width=\dimen192
 \TX@old@table=\dimen193
@@ -516,7 +521,7 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@cols=\count313
 \TX@ftn=\toks20
 )
-(D:\MiKTeX\tex/latex/tools\longtable.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \LTleft=\skip62
 \LTright=\skip63
@@ -535,7 +540,7 @@ Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \c@LT@chunks=\count318
 \LT@p@ftn=\toks21
 )
-(D:\MiKTeX\tex/latex/booktabs\booktabs.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen198
 \lightrulewidth=\dimen199
@@ -555,7 +560,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count322
 \@thisrulewidth=\dimen266
 )
-(D:\MiKTeX\tex/latex/enumitem\enumitem.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip66
 \enit@outerparindent=\dimen267
@@ -564,54 +569,54 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@count@id=\count323
 \enitdp@description=\count324
 )
-(D:\MiKTeX\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
+(e:/Install/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
 
-(D:\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )
-(D:\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+(e:/Install/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(D:\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+(e:/Install/texlive/2025/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 
-(D:\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+(e:/Install/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
-(D:\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+(e:/Install/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(D:\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+(e:/Install/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode not found.
 ))
-(D:\MiKTeX\tex/latex/hycolor\hycolor.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(D:\MiKTeX\tex/latex/hyperref\nameref.sty
-Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+(e:/Install/texlive/2025/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
 
-(D:\MiKTeX\tex/latex/refcount\refcount.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(D:\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+(e:/Install/texlive/2025/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-
-(D:\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+ (e:/Install/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
 \c@section@level=\count325
 )
-(D:\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count326
 )
-(D:\MiKTeX\tex/generic/stringenc\stringenc.sty
+(e:/Install/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
@@ -619,87 +624,87 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 \Hy@linkcounter=\count327
 \Hy@pagecounter=\count328
 
-(D:\MiKTeX\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+(e:/Install/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 )
-(D:\MiKTeX\tex/generic/intcalc\intcalc.sty
+(e:/Install/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count329
 
-(D:\MiKTeX\tex/latex/hyperref\puenc.def
-File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+(e:/Install/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
 )
-Package hyperref Info: Option `unicode' set `true' on input line 4066.
-Package hyperref Info: Hyper figures OFF on input line 4195.
-Package hyperref Info: Link nesting OFF on input line 4200.
-Package hyperref Info: Hyper index ON on input line 4203.
-Package hyperref Info: Plain pages OFF on input line 4210.
-Package hyperref Info: Backreferencing OFF on input line 4215.
+Package hyperref Info: Option `unicode' set `true' on input line 4072.
+Package hyperref Info: Hyper figures OFF on input line 4201.
+Package hyperref Info: Link nesting OFF on input line 4206.
+Package hyperref Info: Hyper index ON on input line 4209.
+Package hyperref Info: Plain pages OFF on input line 4216.
+Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4462.
+Package hyperref Info: Bookmarks ON on input line 4468.
 \c@Hy@tempcnt=\count330
- (D:\MiKTeX\tex/latex/url\url.sty
+
+(e:/Install/texlive/2025/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4801.
+LaTeX Info: Redefining \url on input line 4807.
 \XeTeXLinkMargin=\dimen269
 
-(D:\MiKTeX\tex/generic/bitset\bitset.sty
+(e:/Install/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(D:\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+(e:/Install/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
 \Fld@menulength=\count331
 \Field@Width=\dimen270
 \Fld@charsize=\dimen271
-Package hyperref Info: Hyper figures OFF on input line 6078.
-Package hyperref Info: Link nesting OFF on input line 6083.
-Package hyperref Info: Hyper index ON on input line 6086.
-Package hyperref Info: backreferencing OFF on input line 6093.
-Package hyperref Info: Link coloring OFF on input line 6098.
-Package hyperref Info: Link coloring with OCG OFF on input line 6103.
-Package hyperref Info: PDF/A mode OFF on input line 6108.
+Package hyperref Info: Hyper figures OFF on input line 6084.
+Package hyperref Info: Link nesting OFF on input line 6089.
+Package hyperref Info: Hyper index ON on input line 6092.
+Package hyperref Info: backreferencing OFF on input line 6099.
+Package hyperref Info: Link coloring OFF on input line 6104.
+Package hyperref Info: Link coloring with OCG OFF on input line 6109.
+Package hyperref Info: PDF/A mode OFF on input line 6114.
 \Hy@abspage=\count332
 \c@Item=\count333
 \c@Hfootnote=\count334
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 
-(D:\MiKTeX\tex/latex/hyperref\hxetex.def
-File: hxetex.def 2025-07-12 v7.01o Hyperref driver for XeTeX
+(e:/Install/texlive/2025/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2026-01-29 v7.01p Hyperref driver for XeTeX
 \pdfm@box=\box64
 \c@Hy@AnnotLevel=\count335
 \HyField@AnnotCount=\count336
 \Fld@listcount=\count337
 \c@bookmark@seq@number=\count338
 
-(D:\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
 
-(D:\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
+(e:/Install/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 84.
 )
 \Hy@SectionHShift=\skip67
-)
-(D:\MiKTeX\tex/latex/xcolor\xcolor.sty
+) (e:/Install/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 
-(D:\MiKTeX\tex/latex/graphics-cfg\color.cfg
+(e:/Install/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: xetex.def on input line 274.
 
-(D:\MiKTeX\tex/latex/graphics-def\xetex.def
+(e:/Install/texlive/2025/texmf-dist/tex/latex/graphics-def/xetex.def
 File: xetex.def 2025/11/01 v5.0p Graphics/color driver for xetex
 )
-(D:\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+(e:/Install/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `RGB' extended on input line 1365.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
@@ -709,7 +714,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 )
-(D:\MiKTeX\tex/latex/listings\listings.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count339
 \lst@gtempboxa=\box65
 \lst@token=\toks23
@@ -723,21 +728,21 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 \lst@lineno=\count344
 \lst@maxwidth=\dimen275
 
-(D:\MiKTeX\tex/latex/listings\lstpatch.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 )
-(D:\MiKTeX\tex/latex/listings\lstmisc.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 \c@lstnumber=\count345
 \lst@skipnumbers=\count346
 \lst@framebox=\box66
 )
-(D:\MiKTeX\tex/latex/listings\listings.cfg
+(e:/Install/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2025/11/14 1.11b listings configuration
 ))
 Package: listings 2025/11/14 1.11b (Carsten Heinz)
 
-(D:\MiKTeX\tex/xelatex/xecjk\xeCJK-listings.sty
+(e:/Install/texlive/2025/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
 Package: xeCJK-listings 2022/08/05 v3.9.1 xeCJK patch file for listings
 \l__xeCJK_listings_max_char_int=\count347
 \l__xeCJK_listings_flag_int=\count348
@@ -748,7 +753,7 @@ Package: xeCJK-listings 2022/08/05 v3.9.1 xeCJK patch file for listings
     but found:
         2025/11/14 1.11b (Carsten Heinz)
     so I'm assuming it got fixed.
-(D:\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+(e:/Install/texlive/2025/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 
 \f@nch@headwidth=\skip68
@@ -768,7 +773,8 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \@temptokenb=\toks24
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 21.
- (测试计划.aux)
+
+(./测试计划.aux)
 \openout1 = `测试计划.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
@@ -885,12 +891,12 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 37.
-(测试计划.out) (测试计划.out)
+(./测试计划.out) (./测试计划.out)
 \@outlinefile=\write3
 \openout3 = `测试计划.out'.
 
 \c@lstlisting=\count349
- (测试计划.toc
+ (./测试计划.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 10.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -976,21 +982,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 226--226
  []
 
 ignored error: Infinite glue shrinkage found in box being split [5] [6]
-[7] [8] (测试计划.aux)
+[7] [8] (./测试计划.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `测试计划.out' has not changed.
-(rerunfilecheck)             Checksum: 5EDB10A259B332F29CA5E82699EE8BF7;2003.
+(rerunfilecheck)             Checksum: AD718E251756577BD32A54007A33A899;2003.
  ) 
 Here is how much of TeX's memory you used:
- 16997 strings out of 402987
- 362948 string characters out of 5455769
- 831610 words of memory out of 5000000
- 45514 multiletter control sequences out of 15000+600000
+ 17034 strings out of 468174
+ 370582 string characters out of 5433155
+ 832152 words of memory out of 5000000
+ 45541 multiletter control sequences out of 15000+600000
  632739 words of font info for 87 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,12n,111p,1171b,1755s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,12n,111p,1169b,1755s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on 测试计划.pdf (8 pages).
