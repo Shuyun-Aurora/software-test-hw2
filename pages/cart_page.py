@@ -63,6 +63,9 @@ class CartPage:
             EC.visibility_of_element_located(self.CHECKOUT_BUTTON)
         ).is_displayed()
 
+    def checkout(self) -> None:
+        self.wait.until(EC.element_to_be_clickable(self.CHECKOUT_BUTTON)).click()
+
     def _cart_items(self):
         self.wait_until_loaded()
         return self.driver.find_elements(*self.CART_ITEMS)

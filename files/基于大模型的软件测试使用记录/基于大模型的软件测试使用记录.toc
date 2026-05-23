@@ -5,4 +5,8 @@
 \contentsline {section}{\numberline {2}成员B使用记录}{8}{section.2}%
 \contentsline {subsection}{\numberline {2.1}测试代码生成与执行}{8}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}测试报告编写与修改}{10}{subsection.2.2}%
-\contentsline {section}{\numberline {3}成员C使用记录}{11}{section.3}%
+\contentsline {section}{\numberline {3}成员C使用记录}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Web 端测试代码生成与执行}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}移动端测试计划与环境确认}{14}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}移动端测试错误定位与修复}{16}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}测试报告编写与修改}{19}{subsection.3.4}%

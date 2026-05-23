@@ -34,6 +34,27 @@ conda activate saucedemo-gui-test
 python -m pytest tests/test_tc03_product_detail.py tests/test_tc04_add_to_cart.py tests/test_tc05_cart_page.py
 ```
 
+运行成员 C 负责的 TC06：
+
+```powershell
+conda activate saucedemo-gui-test
+python -m pytest tests/test_tc06_checkout.py
+```
+
+运行 Appium 移动端 Web UI 测试前，需要先启动 Android 模拟器，并在另一个 PowerShell 窗口启动 Appium Server：
+
+```powershell
+appium --allow-insecure chromedriver_autodownload
+```
+
+然后运行 Appium 冒烟测试和 TC08：
+
+```powershell
+conda activate saucedemo-gui-test
+python -m pytest tests/test_appium_smoke.py
+python -m pytest tests/test_tc08_mobile_appium.py
+```
+
 运行当前全部测试：
 
 ```powershell
@@ -48,5 +69,8 @@ python -m pytest
 - TC03：查看商品详情，检查商品名称、描述、价格、图片和返回入口
 - TC04：添加商品到购物车，检查按钮状态和购物车 badge 数量变化
 - TC05：购物车页面检查，检查商品名称、描述、价格、数量和结算入口
+- TC06：结算与订单完成，填写结算信息，检查确认页并完成订单
+- TC07：侧边栏导航菜单，检查菜单展开、导航项显示和关闭
+- TC08：Appium 移动端 Web UI 测试，在 Android 模拟器 Chrome 中检查核心购物流程
 
 测试失败时会在 `artifacts/screenshots/` 下保存截图。

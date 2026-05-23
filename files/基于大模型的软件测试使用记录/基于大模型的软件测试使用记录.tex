@@ -107,4 +107,66 @@
 
 \section{成员C使用记录}
 
+\subsection{Web 端测试代码生成与执行}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth,height=0.68\textheight,keepaspectratio]{member_c/web端测试代码生成.png}
+\caption{向大模型说明先完成普通 Web 端 TC06 的需求，生成结算与订单完成相关的测试代码和页面对象。}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth,height=0.68\textheight,keepaspectratio]{member_c/web端测试代码修复及运行.png}
+\caption{根据本地运行结果，与大模型一起定位 TC06 在非 headless 模式下点击 Continue 不稳定的问题，并通过滚动到按钮后点击的方式修复，最终运行通过。}
+\end{figure}
+
+\subsection{移动端测试计划与环境确认}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth,height=0.68\textheight,keepaspectratio]{member_c/移动端测试计划生成.png}
+\caption{讨论移动端测试是否需要额外环境，并确定采用 Appium、Android 模拟器和 Android Chrome 进行真实移动端 Web UI 测试。}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth,height=0.68\textheight,keepaspectratio]{member_c/移动端测试环境确认及测试代码生成.png}
+\caption{在已安装 Android Studio、模拟器、adb 和 Appium 的基础上，向大模型确认后续步骤，并生成 Appium 冒烟测试和移动端测试代码。}
+\end{figure}
+
+\subsection{移动端测试错误定位与修复}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth,height=0.68\textheight,keepaspectratio]{member_c/移动端测试错误修复1.png}
+\caption{运行 Appium 冒烟测试时遇到 Chromedriver 与 Android Chrome 版本不匹配问题，和大模型一起分析原因并调整 Appium 启动方式。}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth,height=0.68\textheight,keepaspectratio]{member_c/移动端测试错误修复2.png}
+\caption{继续处理移动端测试中的 locator 兼容问题和点击稳定性问题，将定位方式调整为 CSS selector，并优化移动端页面点击逻辑。}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth,height=0.68\textheight,keepaspectratio]{member_c/商量并调整移动端测试内容.png}
+\caption{根据测试计划编号重新梳理 TC07 与移动端测试的关系，将侧边栏导航菜单保留为 TC07，并将 Appium 移动端综合测试调整为 TC08。}
+\end{figure}
+
+\subsection{测试报告编写与修改}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth,height=0.68\textheight,keepaspectratio]{member_c/测试报告生成.png}
+\caption{要求大模型根据成员 C 负责的 TC06、TC07 和 TC08 测试内容，在测试报告中补充对应测试步骤、检查点、执行结果和截图引用。}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth,height=0.68\textheight,keepaspectratio]{member_c/测试报告调整.png}
+\caption{继续与大模型讨论测试报告结构和表述方式，对桌面端与移动端测试环境、问题与结论、UI 截图展示等内容进行调整。}
+\end{figure}
+
 \end{document}

@@ -16,6 +16,10 @@ class InventoryPage:
     SORT_SELECT = (By.CLASS_NAME, "product_sort_container")
     CART_LINK = (By.CLASS_NAME, "shopping_cart_link")
     CART_BADGE = (By.CLASS_NAME, "shopping_cart_badge")
+    SIDEBAR_MENU_BUTTON = (By.ID, "react-burger-menu-btn")
+    SIDEBAR_CLOSE_BUTTON = (By.ID, "react-burger-cross-btn")
+    SIDEBAR_MENU = (By.CLASS_NAME, "bm-menu-wrap")
+    SIDEBAR_LINKS = (By.CLASS_NAME, "bm-item")
 
     def __init__(self, driver: WebDriver, timeout: int = 10):
         self.driver = driver
@@ -91,6 +95,48 @@ class InventoryPage:
 
     def open_cart(self) -> None:
         self.wait.until(EC.element_to_be_clickable(self.CART_LINK)).click()
+
+    def open_sidebar(self) -> None:
+        self.wait.until(EC.element_to_be_clickable(self.SIDEBAR_MENU_BUTTON)).click()
+        self.wait.until(
+            lambda _: self.driver.find_element(*self.SIDEBAR_MENU).get_attribute(
+                "aria-hidden"
+            )
+            == "false"
+        )
+
+    def close_sidebar(self) -> None:
+        self.wait.until(EC.element_to_be_clickable(self.SIDEBAR_CLOSE_BUTTON)).click()
+        self.wait.until(
+            lambda _: self.driver.find_element(*self.SIDEBAR_MENU).get_attribute(
+                "aria-hidden"
+            )
+            == "true"
+        )
+
+    def sidebar_menu_button_is_visible(self) -> bool:
+        return self.wait.until(
+            EC.visibility_of_element_located(self.SIDEBAR_MENU_BUTTON)
+        ).is_displayed()
+
+    def sidebar_close_button_is_visible(self) -> bool:
+        return self.wait.until(
+            EC.visibility_of_element_located(self.SIDEBAR_CLOSE_BUTTON)
+        ).is_displayed()
+
+    def sidebar_link_texts(self) -> list[str]:
+        return [
+            link.text
+            for link in self.wait.until(
+                EC.visibility_of_all_elements_located(self.SIDEBAR_LINKS)
+            )
+        ]
+
+    def sidebar_is_hidden(self) -> bool:
+        return (
+            self.driver.find_element(*self.SIDEBAR_MENU).get_attribute("aria-hidden")
+            == "true"
+        )
 
     def _item_by_name(self, product_name: str):
         self.wait_until_loaded()
