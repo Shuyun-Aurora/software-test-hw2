@@ -1,14 +1,18 @@
 \contentsline {section}{\numberline {1}测试概述}{2}{section.1}%
-\contentsline {section}{\numberline {2}测试范围}{2}{section.2}%
-\contentsline {section}{\numberline {3}测试环境与工具}{2}{section.3}%
-\contentsline {section}{\numberline {4}测试功能或事务设计}{3}{section.4}%
-\contentsline {section}{\numberline {5}Web 元素覆盖情况}{4}{section.5}%
-\contentsline {section}{\numberline {6}测试用例与执行结果}{5}{section.6}%
-\contentsline {subsection}{\numberline {6.1}TC01 登录后进入商品浏览流程}{5}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}TC02 商品排序}{6}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}TC03 查看商品详情}{7}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}TC04 添加商品到购物车}{8}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}TC05 购物车页面检查}{9}{subsection.6.5}%
-\contentsline {section}{\numberline {7}移动端 Web UI 测试情况}{10}{section.7}%
-\contentsline {section}{\numberline {8}问题与结论}{10}{section.8}%
-\contentsline {section}{\numberline {9}小组成员贡献与比例}{11}{section.9}%
+\contentsline {section}{\numberline {2}测试范围}{3}{section.2}%
+\contentsline {section}{\numberline {3}测试环境与工具}{3}{section.3}%
+\contentsline {section}{\numberline {4}测试功能或事务设计}{4}{section.4}%
+\contentsline {section}{\numberline {5}Web 元素覆盖情况}{5}{section.5}%
+\contentsline {section}{\numberline {6}测试用例与执行结果}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}TC01 登录后进入商品浏览流程}{6}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}TC02 商品排序}{7}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}TC03 查看商品详情}{8}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}TC04 添加商品到购物车}{9}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}TC05 购物车页面检查}{10}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}TC06 结算与订单完成}{11}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}TC07 侧边栏导航菜单}{12}{subsection.6.7}%
+\contentsline {section}{\numberline {7}移动端 Web UI 测试情况}{13}{section.7}%
+\contentsline {section}{\numberline {8}问题与结论}{16}{section.8}%
+\contentsline {subsection}{\numberline {8.1}桌面端 Web UI 测试结论}{16}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}移动端 Web UI 测试结论}{16}{subsection.8.2}%
+\contentsline {section}{\numberline {9}小组成员贡献与比例}{17}{section.9}%

@@ -51,9 +51,7 @@
 
 本次 GUI 自动化测试以 SauceDemo 电商网站为被测对象，围绕电商网站中常见的商品浏览、排序、详情查看、购物车、结算和移动端补充验证等事务开展测试。SauceDemo 页面结构清晰，业务流程完整，且包含按钮、输入框、表单、下拉框、链接、侧边栏、购物车标记等多种 Web 元素，适合作为课程作业中的 GUI 自动化测试对象。
 
-测试采用 Selenium WebDriver 模拟用户在浏览器中的真实操作，并使用 pytest 组织测试用例和执行结果。报告围绕测试计划中确定的功能事务展开，记录测试设计、Web 元素覆盖、用例执行结果和测试结论。
-
-（如果移动端 Web UI 测试执行成功，需要在本节补充移动端测试对象说明，例如 Android Chrome 或移动端视口下的 SauceDemo Web 页面。）
+测试采用 Selenium WebDriver 模拟用户在桌面浏览器中的真实操作，并使用 pytest 组织测试用例和执行结果。移动端部分采用 Appium、UiAutomator2 Driver 和 Android 模拟器中的 Chrome 浏览器执行，用于补充验证 SauceDemo 在真实移动端浏览器环境下的核心购物流程。报告围绕测试计划中确定的功能事务展开，记录测试设计、Web 元素覆盖、用例执行结果和测试结论。
 
 被测网站：
 
@@ -68,6 +66,25 @@ username: standard_user
 password: secret_sauce
 \end{lstlisting}
 
+图 \ref{fig:homepage-comparison} 展示了 SauceDemo 在桌面端浏览器和 Android 模拟器 Chrome 中的商品列表首页。桌面端页面用于执行 TC01--TC07 的 Web UI 自动化测试，移动端页面用于执行 TC08 的 Appium 移动端 Web UI 综合验证。
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[c]{0.62\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/web_homepage_即商品列表.png}
+{\small 桌面端商品列表页}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.28\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/mobile_homepage_商品列表.png}
+{\small 移动端商品列表页}
+\end{minipage}
+\caption{桌面端与移动端商品列表首页对比}
+\label{fig:homepage-comparison}
+\end{figure}
+
 \section{测试范围}
 
 本次测试覆盖 SauceDemo 的核心购物路径：
@@ -76,19 +93,15 @@ password: secret_sauce
 登录页 -> 商品列表页 -> 商品详情页 -> 购物车页 -> 结算页 -> 订单完成页
 \end{lstlisting}
 
-整体测试事务包括登录后进入商品浏览流程、商品排序、查看商品详情、添加商品到购物车、购物车页面检查、结算与订单完成、侧边栏导航菜单和移动端 Web UI 轻量抽测。其中，桌面端 Web 测试用于验证主要业务流程，移动端 Web UI 测试作为补充抽测，用于检查移动端浏览器环境下的关键触控和页面滚动操作。
-
-（如果移动端 Web UI 测试执行成功，需要在本节补充移动端测试范围，例如登录页显示、商品列表滑动、触控点击 Add to cart 和购物车 badge 状态变化；如果采用回退方案，需要说明该范围属于移动端视口模拟验证。）
+整体测试事务包括登录后进入商品浏览流程、商品排序、查看商品详情、添加商品到购物车、购物车页面检查、结算与订单完成、侧边栏导航菜单和移动端 Web UI 综合验证。其中，TC01--TC07 为桌面端 Web 自动化测试，用于验证主要业务功能；TC08 为 Appium 移动端补充测试，用于在 Android Chrome 中验证登录、商品浏览、排序、页面滚动、商品详情、购物车、结算和订单完成等核心流程。
 
 \section{测试环境与工具}
 
-测试环境使用独立 conda 环境管理 Python 依赖，避免与本机其他课程项目或 Python 包版本产生冲突。测试代码采用 Page Object 思路封装页面元素和页面行为，将页面定位、页面操作和测试断言分离，使测试代码结构更清晰，也便于定位失败原因。
-
-（如果移动端 Web UI 测试执行成功，需要在本节补充 Appium、Android 模拟器或真实 Android 设备、Android Chrome 等环境与工具；如果采用回退方案，需要补充 Chrome mobile emulation 或 Selenium 移动端窗口尺寸设置。）
+测试环境使用独立 conda 环境管理 Python 依赖，避免与本机其他课程项目或 Python 包版本产生冲突。桌面端测试代码采用 Page Object 思路封装页面元素和页面行为，将页面定位、页面操作和测试断言分离，使测试代码结构更清晰，也便于定位失败原因。移动端测试通过 Appium Server 连接 Android 模拟器，并驱动模拟器中的 Chrome 浏览器执行 Web UI 操作。
 
 \begin{table}[H]
 \centering
-\caption{测试环境与工具}
+\caption{桌面端 Web UI 测试环境与工具}
 \begin{tabularx}{\textwidth}{>{\bfseries}p{3.2cm}X}
 \toprule
 项目 & 内容 \\
@@ -100,6 +113,25 @@ Python 环境 & conda 环境：saucedemo-gui-test \\
 自动化框架 & Selenium WebDriver \\
 测试运行框架 & pytest \\
 测试组织方式 & Page Object + pytest fixture \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{移动端 Web UI 测试环境与工具}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3.2cm}X}
+\toprule
+项目 & 内容 \\
+\midrule
+移动端设备 & Android Studio 模拟器 \\
+移动端浏览器 & Android Chrome \\
+设备连接工具 & adb \\
+Appium Server & Appium 2，监听地址 http://127.0.0.1:4723 \\
+自动化驱动 & UiAutomator2 Driver \\
+Python 客户端 & Appium-Python-Client \\
+测试运行框架 & pytest \\
+启动要求 & Android 模拟器保持运行，Appium Server 使用 appium --allow-insecure chromedriver\_autodownload 启动。 \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -125,7 +157,7 @@ TC04 & 添加商品到购物车 & 验证商品能够从列表页或详情页加�
 TC05 & 购物车页面检查 & 验证点击购物车入口后能够进入购物车页，并检查购物车中商品名称、价格、数量和结算入口。 \\
 TC06 & 结算与订单完成 & 验证购物车商品能够进入结算流程，填写结算信息后完成订单，并检查订单完成提示。 \\
 TC07 & 侧边栏导航菜单 & 验证商品列表页侧边栏菜单能够正常展开、显示导航项并关闭。 \\
-TC08 & 移动端 Web UI 轻量抽测 & 验证移动端浏览器或移动端视口下登录、商品列表滑动和加入购物车等关键交互是否可用。 \\
+TC08 & 移动端 Web UI 综合验证 & 使用 Appium 驱动 Android 模拟器 Chrome，验证移动端环境下核心购物流程是否可用。 \\
 \bottomrule
 \end{longtable}
 
@@ -165,6 +197,8 @@ TC08 & 移动端 Web UI 轻量抽测 & 验证移动端浏览器或移动端视�
 测试用例按照“操作步骤可复现、检查点明确、结果可断言”的原则编写。自动化测试使用 Selenium 模拟真实浏览器操作，并通过 pytest 对页面跳转、元素显示状态、业务数据和交互结果进行断言。测试失败时会自动在 artifacts/screenshots 目录下保存截图，便于定位问题。
 
 用例执行前需确认 conda 环境、Python 依赖和 Chrome 浏览器可用。执行过程中浏览器由测试 fixture 自动启动，测试结束后自动关闭浏览器实例。各测试事务的具体步骤、检查点和执行结果在以下小节中分别记录。
+
+移动端 TC08 执行前还需额外确认 Android 模拟器已启动、adb 能识别设备，并使用 \verb|appium --allow-insecure chromedriver_autodownload| 启动 Appium Server。由于 Android Chrome 版本与 Chromedriver 需要匹配，测试过程中启用 Chromedriver 自动下载能力以保证 Appium 能够正常控制模拟器浏览器。
 
 \subsection{TC01 登录后进入商品浏览流程}
 
@@ -311,15 +345,139 @@ TC05 用于验证已添加商品在购物车页面中的展示结果。该用例
 \caption{TC05 购物车页面检查执行结果截图}
 \end{figure}
 
+\subsection{TC06 结算与订单完成}
+
+TC06 用于验证用户从购物车进入结算流程并完成订单的完整路径。该用例在已登录并添加商品的基础上，依次进入购物车页、结算信息页、订单确认页和订单完成页，检查结算表单输入框、Continue 按钮、Finish 按钮以及订单完成提示。
+
+\begin{table}[H]
+\centering
+\caption{TC06 测试结果}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3cm}X}
+\toprule
+项目 & 内容 \\
+\midrule
+测试文件 & tests/test\_tc06\_checkout.py \\
+前置条件 & 已使用标准账号登录并进入商品列表页。 \\
+测试步骤 & 获取 Sauce Labs Backpack 在商品列表页中的价格；点击该商品的 Add to cart；进入购物车页并点击 Checkout；在结算信息页填写 first name、last name 和 postal code；点击 Continue 进入订单确认页；检查确认页商品信息；点击 Finish 完成订单。 \\
+实际检查点 & 结算信息页标题为 Checkout: Your Information；结算表单、first name 输入框、last name 输入框和 postal code 输入框可见；订单确认页标题为 Checkout: Overview；确认页商品条目数为 1；商品名称为 Sauce Labs Backpack；商品价格与列表页一致；Finish 按钮可见；订单完成页标题为 Checkout: Complete!；完成页显示 Thank you for your order! 和返回首页按钮。 \\
+预期结果 & 用户能够从购物车正常进入结算流程，填写结算信息后进入订单确认页，并成功完成订单，页面显示订单完成提示。 \\
+执行结果 & 通过。 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+执行结果表明，SauceDemo 的结算流程能够从购物车页稳定跳转至结算信息页，结算表单中的姓名和邮政编码输入框能够正常填写；提交信息后订单确认页能够正确展示待结算商品及价格，点击 Finish 后能够进入订单完成页并显示订单完成提示。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{Figures/TC06_result.png}
+\caption{TC06 结算与订单完成执行结果截图}
+\end{figure}
+
+\subsection{TC07 侧边栏导航菜单}
+
+TC07 用于验证商品列表页左侧侧边栏导航菜单的展开、菜单项显示和关闭能力。该用例覆盖侧边栏菜单按钮、菜单关闭按钮以及 All Items、About、Logout、Reset App State 等导航项，是对 SauceDemo 导航类交互元素的补充检查。
+
+\begin{table}[H]
+\centering
+\caption{TC07 测试结果}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3cm}X}
+\toprule
+项目 & 内容 \\
+\midrule
+测试文件 & tests/test\_tc07\_sidebar\_navigation.py \\
+前置条件 & 已使用标准账号登录并进入商品列表页。 \\
+测试步骤 & 检查侧边栏菜单按钮可见；点击菜单按钮展开侧边栏；检查关闭按钮和导航菜单项；点击关闭按钮关闭侧边栏。 \\
+实际检查点 & 菜单按钮可见；侧边栏展开后关闭按钮可见；菜单项依次显示 All Items、About、Logout、Reset App State；点击关闭按钮后侧边栏隐藏。 \\
+预期结果 & 商品列表页侧边栏能够正常展开和关闭，导航菜单项能够完整显示。 \\
+执行结果 & 通过。 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+执行结果表明，SauceDemo 商品列表页的侧边栏导航菜单能够被 Selenium 稳定触发，展开后导航项显示完整，关闭按钮能够正常收起侧边栏，导航类交互元素符合预期。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{Figures/TC07_result.png}
+\caption{TC07 侧边栏导航菜单执行结果截图}
+\end{figure}
+
 \section{移动端 Web UI 测试情况}
 
-（如果移动端 Web UI 测试执行成功，在本节补充移动端测试步骤、检查点和执行结果；如果采用 Chrome mobile emulation 或 Selenium 移动端窗口尺寸作为回退方案，需要说明该结果属于移动端视口模拟验证。）
+移动端 Web UI 测试采用 Appium、UiAutomator2 Driver 和 Android 模拟器中的 Chrome 浏览器执行。测试脚本通过 Appium Server 连接 Android 模拟器，并在模拟器 Chrome 中访问 SauceDemo 网站，从而验证核心购物流程在 Android 移动端浏览器环境下的可用性。
+
+移动端测试执行前，需要先启动 Android 模拟器并确认 adb 能识别设备，再启动 Appium Server 监听 4723 端口。图 \ref{fig:mobile-env-startup} 和图 \ref{fig:mobile-device-ready} 展示了本次移动端测试的环境启动状态。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{Figures/appium成功启动截图.png}
+\caption{Appium Server 成功启动并监听 4723 端口}
+\label{fig:mobile-env-startup}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[c]{0.48\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/adb_devices_命令截图.png}
+{\small adb 识别 Android 模拟器}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.42\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Figures/安卓手机配置截图.png}
+{\small Android 模拟器设备配置}
+\end{minipage}
+\caption{Android 模拟器连接与设备配置}
+\label{fig:mobile-device-ready}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{移动端 Web UI 综合测试结果}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3cm}X}
+\toprule
+项目 & 内容 \\
+\midrule
+测试文件 & tests/test\_tc08\_mobile\_appium.py \\
+测试环境 & Android Studio 模拟器、Android Chrome、Appium Server、UiAutomator2 Driver、Appium-Python-Client、pytest。 \\
+前置条件 & Android 模拟器已启动，adb 能识别设备，Appium Server 使用 appium --allow-insecure chromedriver\_autodownload 启动。 \\
+测试范围 & 移动端 Chrome 打开 SauceDemo、登录、商品列表展示、商品排序、页面滚动、商品详情查看、加入购物车、购物车页面检查、结算信息填写、订单确认和订单完成。 \\
+实际检查点 & 登录页 username 和 password 输入框可见且可输入；Login 按钮可点击；登录后进入 Products 页面；商品价格排序结果正确；页面可滚动；商品详情页显示 Sauce Labs Backpack 及价格；加入购物车后按钮变为 Remove 且购物车 badge 显示 1；购物车页显示商品名称和数量；结算信息表单可填写；订单确认页和订单完成页均能正常显示。 \\
+预期结果 & Android 模拟器 Chrome 环境下，桌面端已覆盖的核心购物流程在移动端也能够正常完成。 \\
+执行结果 & 通过。 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+执行结果表明，SauceDemo 在 Android 模拟器 Chrome 环境下能够完成从登录、商品浏览、排序、详情查看、加入购物车到结算完成的核心流程。移动端测试没有将 TC01--TC06 完全拆分为多个独立用例重复书写，而是以一个 Appium 综合流程覆盖桌面端主要事务，用于补充证明系统在移动端 Web 浏览器中的关键交互同样可用。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{Figures/TC08_result.png}
+\caption{TC08 Appium 移动端 Web UI 综合测试执行结果截图}
+\end{figure}
 
 \section{问题与结论}
+
+\subsection{桌面端 Web UI 测试结论}
 
 TC01 和 TC02 均执行通过，验证了标准账号进入商品列表页、商品列表页关键元素显示以及商品排序下拉框的四种排序规则。测试结果表明，SauceDemo 的商品浏览入口和商品排序功能表现正常，未发现影响登录后商品浏览和排序操作的功能异常。
 
 TC03、TC04 和 TC05 均执行通过，验证了商品详情页跳转、商品详情信息展示、添加商品到购物车以及购物车页面商品信息展示等流程。测试结果表明，SauceDemo 的商品详情页能够正确显示商品标题、描述、价格和图片；商品加入购物车后按钮状态与购物车 badge 数量能够正确更新；购物车页面能够正确显示已添加商品的名称、描述、价格、数量以及继续购物和结算入口。成员 B 负责范围内未发现影响商品详情查看和购物车使用的功能异常。
+
+TC06 执行通过，验证了从购物车进入结算信息页、填写结算表单、进入订单确认页并完成订单的完整流程。测试结果表明，SauceDemo 的结算表单输入、订单确认和订单完成提示均符合预期，未发现影响结算与订单完成流程的功能异常。
+
+TC07 执行通过，验证了商品列表页侧边栏导航菜单的展开、导航项显示和关闭流程。测试结果表明，SauceDemo 的侧边栏导航控件能够正常响应用户操作，未发现影响导航菜单使用的功能异常。
+
+综上，桌面端 Web UI 测试覆盖了从登录、商品浏览、排序、详情查看、加入购物车、购物车检查、结算完成到侧边栏导航的主要业务路径。TC01--TC07 均执行通过，未发现影响桌面端核心购物流程和导航交互的功能异常。
+
+\subsection{移动端 Web UI 测试结论}
+
+TC08 移动端 Web UI 综合测试执行通过。测试通过 Appium 控制 Android 模拟器中的 Chrome 浏览器完成核心购物流程，验证了登录输入、按钮触控点击、页面滚动、商品排序、商品详情跳转、购物车状态更新、结算表单填写和订单完成等关键操作。测试结果表明，SauceDemo 的核心业务流程在移动端浏览器环境下也能够正常运行。
+
+移动端测试采用 Android 模拟器中的 Chrome 浏览器执行。测试结果说明，在 Appium 移动端 Web UI 环境下，SauceDemo 的核心购物流程能够完成，移动端页面滚动、触控点击和表单输入等关键交互未发现明显异常。
 
 \section{小组成员贡献与比例}
 
@@ -330,9 +488,9 @@ TC03、TC04 和 TC05 均执行通过，验证了商品详情页跳转、商品�
 \toprule
 成员 & 主要贡献 & 贡献比例 \\
 \midrule
-成员 A & 测试计划编写；登录后商品浏览流程与商品排序相关测试；测试报告对应部分整理。 & 33.3\% \\
-成员 B & 商品详情、添加商品到购物车、购物车页面检查相关测试与报告内容。 & 33.3\% \\
-成员 C & 结算与订单完成、侧边栏导航菜单、移动端 Web UI 轻量抽测相关测试与报告内容。 & 33.3\% \\
+桂舒芸 & 测试计划编写；登录后商品浏览流程与商品排序相关测试；测试报告对应部分整理。 & 33.3\% \\
+石欣睿 & 商品详情、添加商品到购物车、购物车页面检查相关测试与报告内容。 & 33.3\% \\
+孙昕玥 & 结算与订单完成、侧边栏导航菜单、Appium 移动端 Web UI 综合验证相关测试与报告内容。 & 33.3\% \\
 \bottomrule
 \end{tabularx}
 \end{table}
